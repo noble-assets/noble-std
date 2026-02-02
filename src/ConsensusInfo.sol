@@ -9,11 +9,11 @@ library ConsensusInfo {
     address internal constant CONSENSUS_INFO_ADDRESS = 0x6625300000000000000000000000000000000001;
 
     /// @notice Reads a value from the ConsensusInfo system contract.
-    /// @param selector The selector indicating which value to read.
-    /// @return result The value returned by the system contract.
-    function read(uint256 selector) private view returns (uint256 result) {
+    /// @param slot The storage slot to read from.
+    /// @return result The value stored at the specified slot.
+    function read(uint256 slot) private view returns (uint256 result) {
         assembly ("memory-safe") {
-            mstore(0x20, selector)
+            mstore(0x20, slot)
             mstore(0x00, 0)
             pop(staticcall(gas(), CONSENSUS_INFO_ADDRESS, 0x20, 0x20, 0x00, 0x20))
             result := mload(0x00)
