@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: MIT OR Apache-2.0
 pragma solidity >=0.8.13 <0.9.0;
 
+import {CONSENSUS_INFO_ADDRESS} from "./Constants.sol";
+
 /// @title ConsensusInfo
 /// @author NASD Inc.
 /// @notice A library for interacting with Noble's ConsensusInfo system contract.
 library ConsensusInfo {
-    /// @notice The address of the ConsensusInfo system contract on Noble.
-    address internal constant CONSENSUS_INFO_ADDRESS = 0x6625300000000000000000000000000000000001;
-
     /// @notice Reads a value from the ConsensusInfo system contract.
     /// @param slot The storage slot to read from.
     /// @return result The value stored at the specified slot.
