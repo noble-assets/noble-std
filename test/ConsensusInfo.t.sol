@@ -12,11 +12,13 @@ contract ConsensusInfoTest is Test {
     function setUp() public {
         vm.etch(
             CONSENSUS_INFO_ADDRESS,
-            hex"3373fffffffffffffffffffffffffffffffffffffffe14603957366020146024575f5ffd5b5f35806002116031575f5ffd5b545f5260205ff35b5f355f5560203560015500"
+            hex"3373fffffffffffffffffffffffffffffffffffffffe14603957366020146024575f5ffd5b5f35806003116031575f5ffd5b545f5260205ff35b5f355f5560203560015560403560025500"
         );
 
         vm.prank(SYSTEM_ADDRESS);
-        (bool success,) = CONSENSUS_INFO_ADDRESS.call(abi.encode(uint256(1773826860000), uint64(0)));
+        (bool success,) = CONSENSUS_INFO_ADDRESS.call(
+            abi.encode(1773826860000, 0, 0x56a3d0c4bb63de9988a2cb9d0be8dbaa4da785390cbb7d26b9919df82b621caa)
+        );
         require(success);
     }
 
@@ -28,5 +30,10 @@ contract ConsensusInfoTest is Test {
     /// @notice Tests that `epoch` returns the correct epoch number.
     function test_epoch() public view {
         assertEq(ConsensusInfo.epoch(), 0);
+    }
+
+    /// @notice Tests that `proposer` returns the correct block proposer.
+    function test_proposer() public view {
+        assertEq(ConsensusInfo.proposer(), 0x56a3d0c4bb63de9988a2cb9d0be8dbaa4da785390cbb7d26b9919df82b621caa);
     }
 }
