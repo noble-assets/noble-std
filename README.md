@@ -20,7 +20,11 @@ soldeer install noble-std
 
 <pre>
 src
-└── <a href="./src/ConsensusInfo.sol">ConsensusInfo.sol</a>: A library for interacting with Noble's ConsensusInfo system contract.
+├── <a href="./src/ConsensusInfo.sol">ConsensusInfo.sol</a>: A library for interacting with Noble's ConsensusInfo system contract.
+├── <a href="./src/Constants.sol">Constants.sol</a>: Noble specific constants (system address, contract addresses).
+└── interfaces
+    ├── <a href="./src/interfaces/IRegistrar.sol">IRegistrar.sol</a>: Interface for the Registrar contract.
+    └── <a href="./src/interfaces/IValidatorManager.sol">IValidatorManager.sol</a>: Interface for the Validator Manager contract.
 </pre>
 
 ## Support
