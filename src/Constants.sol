@@ -15,3 +15,6 @@ address constant VALIDATOR_MANAGER_ADDRESS = 0x662530000000000000000000000000000
 
 /// @dev The address of the Registrar predeployed contract on Noble.
 address constant REGISTRAR_ADDRESS = 0x6625300000000000000000000000000000000003;
+
+/// @dev The address of the FeeDistributor predeployed contract on Noble.
+address constant FEE_DISTRIBUTOR_ADDRESS = 0x6625300000000000000000000000000000000004;
