@@ -67,6 +67,9 @@ interface IValidatorManager {
     /// @notice Error when a validator does not exist.
     error ValidatorNotFound(bytes32 publicKey);
 
+    /// @notice Error when an address is the zero address.
+    error ZeroAddress();
+
     // =========================================================================
     // Functions
     // =========================================================================
